@@ -1,0 +1,45 @@
+import { Container, Input } from "./styles";
+import { useState } from "react";
+
+import BurguerMenu from "../BurguerMenu";
+import Logo from "../Logo";
+import NavBar from "../NavBar";
+
+const Header = ({ openModalLogin }) => {
+  const [open, setOpen] = useState(false);
+  const [style, setStyle] = useState("cont");
+
+  const handleOpenNav = () => {
+    setOpen(!open);
+  };
+
+  const changeStyle = () => {
+    const newColor = style === "cont" ? setStyle("cont2") : setStyle("cont");
+  };
+
+  const wrapperFunc = () => {
+    openModalLogin(openModalLogin);
+    handleOpenNav();
+    changeStyle();
+  };
+
+  const wrapperFunction = () => {
+    handleOpenNav();
+    changeStyle();
+  };
+
+  return (
+    <Container>
+      <section className={style}>
+        <div>
+          <Logo />
+          <Input />
+        </div>
+        <BurguerMenu wrapperFunction={wrapperFunction} />
+      </section>
+      <NavBar open={open} wrapperFunc={wrapperFunc} />
+    </Container>
+  );
+};
+
+export default Header;
