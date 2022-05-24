@@ -1,19 +1,20 @@
 import { useProducts } from "../../provider/products";
+import { Container } from "./styles";
 
 const Shop = () => {
   const { products } = useProducts();
   console.log(products);
   return (
-    <div>
+    <Container>
       {products.map((element) => (
         <li key={element.id}>
           <img alt={element.name} src={element.img_url} />
           <p>{element.name}</p>
-          <h4>{element.price}</h4>
+          <h4>{`R$ ${element.price.toFixed(2)}`}</h4>
           <p>{element.description}</p>
         </li>
       ))}
-    </div>
+    </Container>
   );
 };
 
