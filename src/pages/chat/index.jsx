@@ -50,7 +50,6 @@ const ChatPage = () => {
 
   return (
     <>
-      <Header />
       <Container>
         <h1>Music Club Chat</h1>
 
