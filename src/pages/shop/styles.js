@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   list-style: none;
   display: flex;
-
   flex-wrap: wrap;
   gap: 5px;
   li {
@@ -40,4 +39,11 @@ export const Container = styled.div`
       height: 70px;
     }
   }
+`;
+
+export const Button = styled.button`
+  width: 100px;
+  height: 60px;
+  font-size: 14px;
+  cursor: pointer;
 `;

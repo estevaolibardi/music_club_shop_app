@@ -4,22 +4,25 @@ export const ProductsContext = createContext([]);
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [actualPage, setActualPage] = useState("/products?page=1&limit=15");
 
-  const getAllProducts = () => {
+  useEffect(() => {
     musicClubShopApi
-      .get("/products", { mode: "no-cors" })
+      .get(actualPage, { mode: "no-cors" })
       .then((res) => setProducts(res.data))
       .catch((error) => {
         console.log(error);
       });
-  };
-
-  useEffect(() => {
-    getAllProducts();
-  }, []);
+  }, [actualPage]);
 
   return (
-    <ProductsContext.Provider value={{ products, getAllProducts }}>
+    <ProductsContext.Provider
+      value={{
+        products,
+        actualPage,
+        setActualPage,
+      }}
+    >
       {children}
     </ProductsContext.Provider>
   );
