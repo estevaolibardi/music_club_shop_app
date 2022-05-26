@@ -4,9 +4,11 @@ import Home from "../pages/home";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import User from "../pages/user";
-import Shop from "../pages/shop";
+import Shop from "../pages/Shop/index.jsx";
 import Cart from "../pages/cart";
 import Chat from "../pages/chat";
+import AdminPage from "../pages/admin";
+import LoginAdminPage from "../pages/admin-login";
 
 const Router = () => {
   return (
