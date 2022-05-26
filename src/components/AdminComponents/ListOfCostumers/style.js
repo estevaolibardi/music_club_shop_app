@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const ListCustomersContainer = styled.div`
-  background-color: white;
+  background-color: var(--color-admin-background-secondary);
   border-radius: 20px;
   padding: 30px 0;
   margin: 0 20px;
@@ -19,7 +19,7 @@ export const ListCustomersContainer = styled.div`
   }
   p {
     display: inline-block;
-    color: #999;
+    color: var(--color-admin-text-secondary);
     text-overflow: ellipsis;
     overflow: hidden;
     padding: 0 20px;
@@ -27,7 +27,7 @@ export const ListCustomersContainer = styled.div`
   }
   .line {
     padding: 14px 0;
-    border-bottom: 2px solid #e2e2e2;
+    border-bottom: 2px solid var(--color-admin-background-primary);
   }
   .section-title {
     display: flex;
@@ -36,7 +36,7 @@ export const ListCustomersContainer = styled.div`
   }
   .table-header {
     p {
-      color: #000;
+      color: var(--color-admin-text-primary);
     }
   }
 
@@ -45,7 +45,7 @@ export const ListCustomersContainer = styled.div`
       background-color: var(--color-admin-primary);
       transition: 400ms all;
       p,svg{
-        color:white
+        color:var(--color-admin-text-white)
       }
     }
   }

@@ -6,7 +6,7 @@ export const InputContainer = styled.div`
         outline: 0;
         background-color: transparent;
     }
-    border:3px solid #e2e2e2;
+    border:1px solid var(--color-admin-text-secondary);
     display: flex;
     align-items: stretch;
     border-radius: 20px;
@@ -23,7 +23,7 @@ export const InputContainer = styled.div`
     }
     button{
         svg{
-            color: #444;
+            color: var(--color-admin-text-secondary);
             font-size: 18px;
         }
     }

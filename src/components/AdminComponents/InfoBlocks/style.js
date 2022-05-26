@@ -15,7 +15,7 @@ export const InfoBlockContainer = styled.div`
     margin: 10px 0px;
     flex-basis: 23%;
     padding: 25px;
-    background-color: white;
+    background-color: var(--color-admin-background-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@ export const InfoBlockContainer = styled.div`
     }
     span {
       font-size: 15px;
-      color: #666;
+      color: var(--color-admin-text-secondary);
       font-weight: 400;
     }
     figure {
@@ -46,13 +46,13 @@ export const InfoBlockContainer = styled.div`
       transition: 400ms all;
       p,
       span {
-        color: white;
+        color: var(--color-admin-text-white);
         transition: 400ms all;
       }
       figure {
         svg {
           transition: 400ms all;
-          color: white;
+          color: var(--color-admin-text-white);
         }
       }
     }

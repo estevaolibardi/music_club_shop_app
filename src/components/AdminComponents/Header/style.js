@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const AdminHeaderContainer = styled.div`
     height: 50px;
-    background-color: #fff;
+    background-color: var(--color-admin-background-secondary);
     width: 100%;
     padding: 30px 20px;
     display: flex;

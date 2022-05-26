@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListOrdersContainer = styled.div`
-  background-color: white;
+  background-color: var(--color-admin-background-secondary);
   border-radius: 20px;
   padding: 30px 0;
   margin: 0 20px;
@@ -18,7 +18,7 @@ export const ListOrdersContainer = styled.div`
   }
   p {
     display: inline-block;
-    color: #999;
+    color: var(--color-admin-text-secondary);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -26,7 +26,7 @@ export const ListOrdersContainer = styled.div`
   }
   .line {
     padding: 14px 0;
-    border-bottom: 2px solid #e2e2e2;
+    border-bottom: 2px solid var(--color-admin-background-primary);
   }
   .section-title {
     display: flex;
@@ -43,16 +43,16 @@ export const ListOrdersContainer = styled.div`
       background-color: var(--color-admin-primary);
       transition: 400ms all;
       p,svg{
-        color:white
+        color:var(--color-admin-text-white)
       }
     }
   }
 
   .name {
-    width: 25%;
+    width: 20%;
   }
   .price {
-    width: 10%;
+    width: 15%;
   }
   .status {
     width: 20%;
