@@ -19,6 +19,7 @@ const Shop = () => {
 
   return (
     <div>
+      <h1>Shop Page, products bellow</h1>
       <Container>
         {products.products ? (
           products.products.map((element) => (
