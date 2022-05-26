@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
+        
     }
     body, input, button {
         font-size: 1rem;
@@ -25,5 +26,9 @@ export const GlobalStyle = createGlobalStyle`
     body{
         margin: 0;
         font-size: 14px;
+    }
+    :root{
+        --color-admin-primary:#FF5E19
+
     }
 `;

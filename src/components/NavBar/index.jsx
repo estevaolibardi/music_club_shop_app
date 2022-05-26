@@ -14,7 +14,7 @@ const NavBar = () => {
           <FaShopify size={25} />
           <Link to="/shop">Shop</Link>
           <FaRegComments size={25} />
-          <Link to="/social"> Social</Link>
+          <Link to="/chat"> Social</Link>
           <FaMusic size={20} />
           <Link to="/cifras"> Cifras</Link>
           <FaGuitar size={25} />

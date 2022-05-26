@@ -1,20 +1,23 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import musicClubShopApi from "../../services/api";
 import { toast } from "react-toastify";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const RegisterContext = createContext([]);
 
 export const RegisterProvider = ({ children }) => {
-  const [user, setUser] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (data) => {
     musicClubShopApi
       .post("/users", data)
       .then((res) => {
         toast.success("Cadastro realizado!");
+        navigate("/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>
+        toast.error("Algo deu errado, verifique o email ou nome de usuário.")
+      );
   };
 
   return (
