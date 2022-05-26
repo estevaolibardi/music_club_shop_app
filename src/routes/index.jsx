@@ -10,6 +10,7 @@ import Chat from "../pages/chat";
 import AdminPage from "../pages/admin";
 import LoginAdminPage from "../pages/admin-login";
 import Header from "../components/Header";
+import News from "../pages/news";
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/news" element={<News></News>} />
       </Routes>
     </div>
   );
