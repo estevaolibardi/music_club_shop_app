@@ -16,6 +16,7 @@ import { UseLoginProvider } from "../../provider/login";
 const ChatPage = () => {
   const { user } = UseLoginProvider();
   const userData = JSON.parse(user);
+  console.log(userData);
 
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
@@ -59,6 +60,7 @@ const ChatPage = () => {
   return (
     <>
       <Header />
+
       <Container>
         <h1>Music Club Chat</h1>
 
