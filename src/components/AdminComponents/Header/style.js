@@ -15,6 +15,12 @@ export const AdminHeaderContainer = styled.div`
     }
     @media (max-width:695px) {
         padding: 30px 10px;
+        figure{
+            margin: 0 0 0 5px;
+        }
+        >svg{
+            margin: 0 5px 0 0px;
+        }
     }
     figure{
         cursor: pointer;

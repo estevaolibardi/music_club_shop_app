@@ -27,4 +27,8 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         font-size: 14px;
     }
+    :root{
+        --color-admin-primary:#FF5E19
+
+    }
 `;

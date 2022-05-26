@@ -7,6 +7,7 @@ import Shop from "../pages/Shop/index.jsx";
 import Cart from "../pages/cart";
 import Chat from "../pages/chat";
 import AdminPage from "../pages/admin";
+import LoginAdminPage from "../pages/admin-login";
 
 const Routes = () => {
   return (
@@ -35,6 +36,9 @@ const Routes = () => {
         </Route>
         <Route exact path='/admin'>
           <AdminPage/>
+        </Route>
+        <Route exact path={'/admin-login'}>
+            <LoginAdminPage/>
         </Route>
       </Switch>
     </div>

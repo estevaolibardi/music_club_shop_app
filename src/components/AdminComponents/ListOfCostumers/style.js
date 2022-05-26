@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const ListOrdersContainer = styled.div`
+
+export const ListCustomersContainer = styled.div`
   background-color: white;
   border-radius: 20px;
   padding: 30px 0;
@@ -21,8 +22,8 @@ export const ListOrdersContainer = styled.div`
     color: #999;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
     padding: 0 20px;
+    white-space: nowrap;
   }
   .line {
     padding: 14px 0;
@@ -38,6 +39,7 @@ export const ListOrdersContainer = styled.div`
       color: #000;
     }
   }
+
   .table-line{
     :hover{
       background-color: var(--color-admin-primary);
@@ -49,23 +51,23 @@ export const ListOrdersContainer = styled.div`
   }
 
   .name {
-    width: 25%;
+    width: 30%;
   }
   .price {
     width: 10%;
   }
   .status {
-    width: 20%;
+    width: 25%;
   }
   .typeOfPayment {
     width: 25%;
   }
   .edit {
-    width: 20%;
+    width: 10%;
     cursor: pointer;
     svg {
       font-size: 20px;
       color: var(--color-admin-primary);
     }
   }
-`;
+`

@@ -1,4 +1,4 @@
-import { FaEdit } from "react-icons/fa";
+import { FaEdit,FaTrash } from "react-icons/fa";
 import { ListProductsContainer } from "./style";
 import {BsEyeFill} from 'react-icons/bs'
 const ListProducts = () => {
@@ -14,6 +14,7 @@ const ListProducts = () => {
         <p className="qtd_in_stock">Quantidade em Estoque</p>
         <p className="details">Ver mais Detalhes</p>
         <p className="edit">Editar</p>
+        <p className="exclude">Excluir</p>
       </div>
       <div className="table">
         <div className="table-line line">
@@ -25,6 +26,7 @@ const ListProducts = () => {
             {" "}
             <FaEdit />{" "}
           </p>
+            <p className="exclude"> <FaTrash/> </p>
         </div>
       </div>
     </ListProductsContainer>

@@ -1,36 +1,42 @@
 import { SideMenuContainer } from "./style";
 import { FiMusic } from "react-icons/fi";
 import { FaGuitar, FaUserFriends } from "react-icons/fa";
-import { BiLogOut ,BiCog,BiArrowToLeft} from "react-icons/bi";
+import { BiLogOut, BiCog, BiArrowToLeft } from "react-icons/bi";
 import { AiFillLock, AiOutlineDollar } from "react-icons/ai";
 
-const SideMenu = ({openSideMenu,openClose,changeOption}) => {
+const SideMenu = ({ openSideMenu, openClose, changeOption }) => {
   return (
-    <SideMenuContainer  openSideMenu={openSideMenu}>
-      <ul className={openSideMenu ? "":"closed"}>
+    <SideMenuContainer openSideMenu={openSideMenu}>
+      <ul className={openSideMenu ? "" : "closed"}>
         <li className="title-page">
           <FiMusic />
           <p>
             <span>Music Club Shop Admin Panel</span>
           </p>
         </li>
-        <li onClick={()=>changeOption('product')}>
+
+
+        <li onClick={() => changeOption("product")}>
           <FaGuitar />
 
-          <p >
+          <p>
             <span>Produtos</span>
           </p>
         </li>
-        <li>
+
+
+        <li onClick={() => changeOption("customer")}>
           <FaUserFriends />
-          <p onClick={()=>changeOption('client')}>
+          <p>
             <span>Clientes</span>
           </p>
         </li>
-        <li onClick={()=>changeOption('order')}>
+
+
+        <li onClick={() => changeOption("order")}>
           <AiOutlineDollar />
           <p>
-            <span >Pedidos</span>
+            <span>Pedidos</span>
           </p>
         </li>
         <li>
@@ -46,7 +52,7 @@ const SideMenu = ({openSideMenu,openClose,changeOption}) => {
             <span>Configurações</span>
           </p>
         </li>
-        
+
         <li>
           <BiLogOut />
           <p>
@@ -55,7 +61,7 @@ const SideMenu = ({openSideMenu,openClose,changeOption}) => {
         </li>
       </ul>
       <div onClick={openClose} className="close_btn">
-          <BiArrowToLeft/>
+        <BiArrowToLeft />
       </div>
     </SideMenuContainer>
   );
