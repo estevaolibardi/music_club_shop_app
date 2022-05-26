@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useProducts } from "../../provider/products";
 import { Container, Button } from "./styles";
+import Header from "../../components/Header"
 
 const Shop = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -20,7 +21,10 @@ const Shop = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div>
+      
       <Container>
         {products.products ? (
           products.products.map((element) => (
@@ -38,6 +42,7 @@ const Shop = () => {
       <Button children="página anterior" onClick={handlePreviousPage} />
       <Button children="próxima página" onClick={handleNextPage} />
     </div>
+    </>
   );
 };
 
