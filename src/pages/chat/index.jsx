@@ -10,6 +10,7 @@ import {
   DataBox,
 } from "./styles";
 import socket from "../../services/chatApi";
+import Header from "../../components/Header";
 
 const ChatPage = () => {
   const userData = JSON.parse(localStorage.getItem("user-data"));
@@ -55,6 +56,7 @@ const ChatPage = () => {
 
   return (
     <>
+      <Header />
       <Container>
         <h1>Music Club Chat</h1>
 
