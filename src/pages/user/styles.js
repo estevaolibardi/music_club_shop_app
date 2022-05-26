@@ -1,8 +1,17 @@
 import styled from "styled-components";
+import img from "../../assets/background-image-login.png";
 
 export const Container = styled.div`
-  margin-top: 30px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 80vh;
 `;
 
 export const ContainerProfile = styled.div`
