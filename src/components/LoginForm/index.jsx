@@ -21,7 +21,7 @@ const LoginForm = () => {
     if (user) {
       navigate("/");
     }
-  });
+  }, [user]);
 
   const schema = yup.object().shape({
     email: yup
@@ -39,7 +39,6 @@ const LoginForm = () => {
 
   const submitLogin = (data) => {
     handleLogin(data);
-    navigate("/");
   };
 
   return (

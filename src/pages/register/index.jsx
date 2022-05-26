@@ -1,11 +1,15 @@
+import Header from "../../components/Header";
 import RegisterForm from "../../components/RegisterForm";
 import { MainContainer } from "./style";
 
 const Register = () => {
   return (
-    <MainContainer>
-      <RegisterForm />
-    </MainContainer>
+    <>
+      <Header />
+      <MainContainer>
+        <RegisterForm />
+      </MainContainer>
+    </>
   );
 };
 
