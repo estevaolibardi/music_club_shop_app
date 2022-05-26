@@ -62,7 +62,7 @@ const ChatPage = () => {
       <Header />
 
       <Container>
-        <h1>Music Club Chat</h1>
+        <h1>Music Club Chat - Vamos trocar uma ideia sobre música!</h1>
 
         <ContainerChat>
           {chat.map((data, index) => (
@@ -88,6 +88,7 @@ const ChatPage = () => {
 
           <Button
             id="botao"
+            title="Envie sua mensagem"
             onClick={() =>
               sendMessage({
                 idRoom: idDestiny,
