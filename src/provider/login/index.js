@@ -19,8 +19,8 @@ export const LoginProvider = ({ children }) => {
   };
 
   const handleLogout = () => {
-    localStorage.clear();
     toast.success(`Até mais ${user.name} ! :D`);
+    localStorage.clear();
   };
 
   const getUserInfo = (token) => {
@@ -34,12 +34,13 @@ export const LoginProvider = ({ children }) => {
       .then((res) => {
         localStorage.setItem("@music-club: user", JSON.stringify(res.data));
         setUser(res.data);
+        toast.success(`Bem vindo(a) ${res.data.name}! :D`);
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <LoginContext.Provider value={{ handleLogin, user }}>
+    <LoginContext.Provider value={{ handleLogin, user, handleLogout }}>
       {children}
     </LoginContext.Provider>
   );

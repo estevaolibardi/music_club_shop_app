@@ -4,6 +4,7 @@ import { BsFillCartFill } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import NavBar from "../NavBar";
 import { BsFillPersonFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -17,10 +18,14 @@ const Header = () => {
             <FaSearch />
           </Butn>
           <BtnCart>
-            <BsFillCartFill size={22} />
+            <Link to="/cart">
+              <BsFillCartFill size={22} />
+            </Link>
           </BtnCart>
           <BtnCart>
-            <BsFillPersonFill size={30} />
+            <Link to="/login">
+              <BsFillPersonFill size={30} />
+            </Link>
           </BtnCart>
         </RightPart>
       </section>

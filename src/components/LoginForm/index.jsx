@@ -21,7 +21,7 @@ const LoginForm = () => {
     if (user) {
       navigate("/");
     }
-  }, [user]);
+  });
 
   const schema = yup.object().shape({
     email: yup
@@ -60,6 +60,7 @@ const LoginForm = () => {
             borderColor={errors.password?.message ? "#e00000" : "#e07600"}
             register={register}
             name={"password"}
+            type="password"
           />
           <ForgetPassword>Esqueci minha senha</ForgetPassword>
 

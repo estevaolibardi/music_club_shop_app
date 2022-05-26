@@ -92,6 +92,10 @@ export const BtnCart = styled.button`
   background-color: transparent;
   color: white;
   border: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 `;
 
 export const RightPart = styled.div`
