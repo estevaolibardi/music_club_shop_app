@@ -4,6 +4,8 @@ import { BsFillCartFill } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import NavBar from "../NavBar";
 import { BsFillPersonFill } from "react-icons/bs";
+import { FiLogOut } from "react-icons/fi";
+
 
 const Header = () => {
   return (
@@ -22,6 +24,10 @@ const Header = () => {
           <BtnCart>
             <BsFillPersonFill size={30} />
           </BtnCart>
+          <BtnCart>
+            <FiLogOut size={25} />
+          </BtnCart>
+
         </RightPart>
       </section>
       <NavBar />
