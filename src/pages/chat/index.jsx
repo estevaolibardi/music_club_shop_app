@@ -11,9 +11,11 @@ import {
 } from "./styles";
 import socket from "../../services/chatApi";
 import Header from "../../components/Header";
+import { UseLoginProvider } from "../../provider/login";
 
 const ChatPage = () => {
-  const userData = JSON.parse(localStorage.getItem("user-data"));
+  const { user } = UseLoginProvider();
+  const userData = JSON.parse(user);
 
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);

@@ -4,7 +4,7 @@ export const Container = styled.header`
   width: 100%;
   background-color: #212121;
   border-radius: ${({ open }) => open && "0 0 15px 15px"};
-  position: relative;
+
   height: 120px;
 
   .cont2 {
@@ -83,7 +83,7 @@ export const Butn = styled.button`
     height: 22px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 750px) {
     top: 40%;
   }
 `;
@@ -101,7 +101,7 @@ export const BtnCart = styled.button`
 export const RightPart = styled.div`
   width: 90%;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 750px) {
     width: 45%;
     margin-right: 300px;
   }
