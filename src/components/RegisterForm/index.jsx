@@ -3,8 +3,11 @@ import * as yup from "yup";
 import { DivMain, FormContainer } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { UseHandle } from "../../provider/register";
 
 const RegisterForm = () => {
+  const { handleRegister } = UseHandle();
+
   const schema = yup.object().shape({
     name: yup.string().required("Nome obrigatório."),
     email: yup
@@ -42,8 +45,9 @@ const RegisterForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const submitForm = () => {
-    //provider de submit do cadastro
+  const submitForm = (data) => {
+    delete data.confirm_password;
+    handleRegister(data);
   };
 
   return (
