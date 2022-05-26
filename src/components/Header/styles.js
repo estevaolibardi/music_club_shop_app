@@ -7,6 +7,7 @@ export const Container = styled.header`
   position: relative;
   height: 11rem;
 
+
   .cont2 {
     background-color: var(--color-primary-4);
   }
@@ -136,6 +137,7 @@ export const Butn = styled.button`
   @media screen and (min-width: 1800px) {
     top: 37%;
     left: 67.5%;
+
   }
 `;
 
@@ -143,6 +145,10 @@ export const BtnCart = styled.button`
   background-color: transparent;
   color: white;
   border: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 `;
 
 export const RightPart = styled.div`
@@ -152,7 +158,7 @@ export const RightPart = styled.div`
     width: 70%;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 750px) {
     width: 45%;
     margin-right: 200px;
     margin-left: 90px;

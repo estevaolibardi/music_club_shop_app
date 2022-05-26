@@ -141,9 +141,8 @@ export const ContainerDownLink = styled.li`
     }
   }
 
-  
+  @media screen and (min-width: 750px) {
 
-  @media screen and (min-width: 1440px) {
     div {
       display: flex;
        

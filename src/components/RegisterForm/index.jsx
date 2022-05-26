@@ -4,9 +4,21 @@ import { DivMain, FormContainer } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UseHandle } from "../../provider/register";
+import { useNavigate } from "react-router-dom";
+import { UseLoginProvider } from "../../provider/login";
+import { useEffect } from "react";
 
 const RegisterForm = () => {
   const { handleRegister } = UseHandle();
+  const { user } = UseLoginProvider();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  });
 
   const schema = yup.object().shape({
     name: yup.string().required("Nome obrigatório."),

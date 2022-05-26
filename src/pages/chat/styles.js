@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import img from "../../assets/background-image-login.png";
 
 export const Container = styled.div`
   display: flex;
@@ -6,18 +7,24 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 80vh;
   h1 {
     width: 90%;
     font-size: 25px;
     color: orange;
     font-family: "Montserrat", sans-serif;
     text-align: left;
+    margin-top: 20px;
   }
 `;
 
 export const ContainerChat = styled.div`
   width: 90%;
-  height: 350px;
+  height: 500px;
   max-width: 800px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -71,7 +78,8 @@ export const MessageBox = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  padding-bottom: 10px;
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
 `;
 
 export const UserBox = styled.div`
@@ -93,6 +101,7 @@ export const DataBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
+  gap: 10px;
   span {
     font-size: 10px;
     text-align: start;

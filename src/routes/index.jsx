@@ -7,6 +7,9 @@ import User from "../pages/user";
 import Shop from "../pages/shop";
 import Cart from "../pages/cart";
 import Chat from "../pages/chat";
+import AdminPage from "../pages/admin";
+import LoginAdminPage from "../pages/admin-login";
+import Header from "../components/Header";
 
 const Router = () => {
   return (
