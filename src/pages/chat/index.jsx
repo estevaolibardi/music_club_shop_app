@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "../../components/Header";
 import {
   Container,
   ContainerChat,
@@ -11,6 +10,7 @@ import {
   DataBox,
 } from "./styles";
 import socket from "../../services/chatApi";
+import Header from "../../components/Header";
 
 const ChatPage = () => {
   const userData = JSON.parse(localStorage.getItem("user-data"));
@@ -26,7 +26,12 @@ const ChatPage = () => {
     socket.on("receivedMessage", (data) => {
       setChat([
         ...chat,
-        { idRoom: data.idRoom, user: data.name, message: data.message },
+        {
+          idRoom: data.idRoom,
+          user: data.name,
+          message: data.message,
+          day: new Date().toString(),
+        },
       ]);
     });
   }, [chat]);
@@ -44,12 +49,14 @@ const ChatPage = () => {
         idRoom: data.idRoom,
         user: data.name,
         message: data.message,
+        day: new Date().toString(),
       },
     ]);
   };
 
   return (
     <>
+      <Header />
       <Container>
         <h1>Music Club Chat</h1>
 
@@ -61,7 +68,7 @@ const ChatPage = () => {
               </UserBox>
               <DataBox>
                 <p>{data.message}</p>
-                <span>{new Date().toString()}</span>
+                <span>{data.day}</span>
               </DataBox>
             </MessageBox>
           ))}
