@@ -21,6 +21,26 @@ export const DivCreateText = styled.div`
   p {
     margin: 15px;
   }
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+    }
+
+    @keyframes hoverLink {
+      from {
+        color: white;
+      }
+      to {
+        color: red;
+      }
+    }
+
+    animation: ease;
+    animation-duration: 1s;
+  }
 `;
 
 export const ForgetPassword = styled.p`

@@ -1,36 +1,49 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 import musicClubShopApi from "../../services/api";
 
-const LoginAdminContext = createContext({});
+const LoginContext = createContext([]);
 
 export const LoginProvider = ({ children }) => {
+  const [user, setUser] = useState(
+    localStorage.getItem("@music-club: user") || false
+  );
 
-  const login = async ({ email, password }) => {
-    await musicClubShopApi.post("/users/login", { email, password })
-    .then(async (res)=>{
-        const token = res.data.token
-        await musicClubShopApi.get('/users/profile',{headers:{authorization:`Bearer ${token}`}})
-        .then(res=>{
-            const is_adm = res.data.is_adm
-            if(is_adm===false){
-                toast.error('Erro no login')
-            }else{
-                toast.success('Login feito com sucesso')
-
-                
-            }
-        })
-        .catch(err=>console.log(err))
-    })
-    .catch(err=>console.log(err))
+  const handleLogin = (data) => {
+    musicClubShopApi
+      .post("/users/login", data)
+      .then((res) => {
+        getUserInfo(res.data.token);
+      })
+      .catch((err) => toast.error("Login ou senha incorretos."));
   };
 
+  const handleLogout = () => {
+    toast.success(`Até mais ${user.name} ! :D`);
+    localStorage.clear();
+  };
+
+  const getUserInfo = (token) => {
+    localStorage.setItem("@music-club: token", JSON.stringify(token));
+    musicClubShopApi
+      .get("/users/profile", {
+        headers: {
+          Authorization: `${token}`,
+        },
+      })
+      .then((res) => {
+        localStorage.setItem("@music-club: user", JSON.stringify(res.data));
+        setUser(res.data);
+        toast.success(`Bem vindo(a) ${res.data.name}! :D`);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
-    <LoginAdminContext.Provider value={{ login }}>
+    <LoginContext.Provider value={{ handleLogin, user, handleLogout }}>
       {children}
-    </LoginAdminContext.Provider>
+    </LoginContext.Provider>
   );
 };
-export const useLoginAdmin = () => useContext(LoginAdminContext);
+
+export const UseLoginProvider = () => useContext(LoginContext);

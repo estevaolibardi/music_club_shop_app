@@ -5,7 +5,6 @@ import AdminLoginInput from "../../components/AdminLoginInput"
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
-import {useHistory} from 'react-router-dom'
 import { useLoginAdmin } from "../../provider/login"
 
 const LoginAdminPage = ()=>{
@@ -21,7 +20,7 @@ const LoginAdminPage = ()=>{
     const loginSub = async (data)=>{
         login(data)
     }
-    const history = useHistory()
+
     
     return(
         <AdminLoginPageContainer>
@@ -35,7 +34,7 @@ const LoginAdminPage = ()=>{
                 <button type="submit" >Login</button>
                 <button onClick={(e)=>{
                     e.preventDefault()
-                    history.push('')
+                    
                 }} className="go-back">Voltar para loja</button>
             </form>
         </AdminLoginPageContainer>

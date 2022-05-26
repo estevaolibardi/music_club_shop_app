@@ -1,48 +1,30 @@
-import { Switch, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "../pages/home";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import User from "../pages/user";
-import Shop from "../pages/Shop/index.jsx";
+import Shop from "../pages/shop";
 import Cart from "../pages/cart";
 import Chat from "../pages/chat";
 import AdminPage from "../pages/admin";
 import LoginAdminPage from "../pages/admin-login";
+import Header from "../components/Header";
 
-const Routes = () => {
+const Router = () => {
   return (
     <div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
-        <Route exact path="/user">
-          <User />
-        </Route>
-        <Route exact path="/shop">
-          <Shop />
-        </Route>
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
-        <Route exact path="/chat">
-          <Chat />
-        </Route>
-        <Route exact path='/admin'>
-          <AdminPage/>
-        </Route>
-        <Route exact path={'/admin-login'}>
-            <LoginAdminPage/>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
     </div>
   );
 };
 
-export default Routes;
+export default Router;

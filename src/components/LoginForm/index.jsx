@@ -8,8 +8,21 @@ import {
   ForgetPassword,
   MainContainer,
 } from "./style";
+import { Link } from "react-router-dom";
+import { UseLoginProvider } from "../../provider/login";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LoginForm = () => {
+  const { handleLogin, user } = UseLoginProvider();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  });
+
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -24,8 +37,8 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const submitLogin = () => {
-    // provider de handle login
+  const submitLogin = (data) => {
+    handleLogin(data);
   };
 
   return (
@@ -47,6 +60,7 @@ const LoginForm = () => {
             borderColor={errors.password?.message ? "#e00000" : "#e07600"}
             register={register}
             name={"password"}
+            type="password"
           />
           <ForgetPassword>Esqueci minha senha</ForgetPassword>
 
@@ -55,7 +69,7 @@ const LoginForm = () => {
       </MainContainer>
       <DivCreateText>
         <p>Não possui uma conta?</p>
-        <p>Cadastre-se aqui!</p>
+        <Link to="/register">Cadastre-se aqui!</Link>
       </DivCreateText>
     </DivContainer>
   );

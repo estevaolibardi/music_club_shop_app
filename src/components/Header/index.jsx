@@ -1,40 +1,35 @@
-import { Container } from "./styles";
-import { useState } from "react";
-
-import BurguerMenu from "../BurguerMenu";
+import { Container, Input, Butn, BtnCart, RightPart } from "./styles";
 import Logo from "../Logo";
+import { BsFillCartFill } from "react-icons/bs";
+import { FaSearch } from "react-icons/fa";
 import NavBar from "../NavBar";
+import { BsFillPersonFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const Header = ({ openModalLogin }) => {
-  const [open, setOpen] = useState(false);
-  const [style, setStyle] = useState("cont");
-
-  const handleOpenNav = () => {
-    setOpen(!open);
-  };
-
-  const changeStyle = () => {
-    const newColor = style === "cont" ? setStyle("cont2") : setStyle("cont");
-  };
-
-  const wrapperFunc = () => {
-    openModalLogin(openModalLogin);
-    handleOpenNav();
-    changeStyle();
-  };
-
-  const wrapperFunction = () => {
-    handleOpenNav();
-    changeStyle();
-  };
-
+const Header = () => {
   return (
     <Container>
-      <section className={style}>
+      <section>
         <Logo />
-        <BurguerMenu wrapperFunction={wrapperFunction} />
+        <RightPart>
+          <Input placeholder="O que procura hoje?"></Input>
+          <Butn type="button">
+            {" "}
+            <FaSearch />
+          </Butn>
+          <BtnCart>
+            <Link to="/cart">
+              <BsFillCartFill size={22} />
+            </Link>
+          </BtnCart>
+          <BtnCart>
+            <Link to="/login">
+              <BsFillPersonFill size={30} />
+            </Link>
+          </BtnCart>
+        </RightPart>
       </section>
-      <NavBar open={open} wrapperFunc={wrapperFunc} />
+      <NavBar />
     </Container>
   );
 };
