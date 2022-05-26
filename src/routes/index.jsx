@@ -1,4 +1,5 @@
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import Home from "../pages/home";
 import Login from "../pages/login";
 import Register from "../pages/register";
@@ -7,34 +8,20 @@ import Shop from "../pages/shop";
 import Cart from "../pages/cart";
 import Chat from "../pages/chat";
 
-const Routes = () => {
+const Router = () => {
   return (
     <div>
-      <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/user">
-          <User />
-        </Route>
-        <Route path="/shop">
-          <Shop />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="/chat">
-          <Chat />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
     </div>
   );
 };
 
-export default Routes;
+export default Router;

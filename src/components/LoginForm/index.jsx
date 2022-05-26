@@ -8,6 +8,7 @@ import {
   ForgetPassword,
   MainContainer,
 } from "./style";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const schema = yup.object().shape({
@@ -55,7 +56,7 @@ const LoginForm = () => {
       </MainContainer>
       <DivCreateText>
         <p>Não possui uma conta?</p>
-        <p>Cadastre-se aqui!</p>
+        <Link to="/register">Cadastre-se aqui!</Link>
       </DivCreateText>
     </DivContainer>
   );
