@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import musicClubShopApi from "../../services/api";
+import { toast } from "react-toastify";
+import { navigate } from "react-router-dom";
 
 export const RegisterContext = createContext([]);
 
@@ -9,7 +11,10 @@ export const RegisterProvider = ({ children }) => {
   const handleRegister = (data) => {
     musicClubShopApi
       .post("/users", data)
-      .then((res) => setUser(res.data))
+      .then((res) => {
+        toast.success("Cadastro realizado!");
+        navigate("/login");
+      })
       .catch((err) => console.log(err));
   };
 
