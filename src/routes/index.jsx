@@ -1,16 +1,16 @@
-import { Switch, Route } from "react-router-dom";
-import Home from "../pages/home";
+import { Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import User from "../pages/user";
-import Shop from "../pages/shop";
+import Shop from "../pages/Shop";
 import Cart from "../pages/cart";
 import Chat from "../pages/chat";
 
-const Routes = () => {
+const Router = () => {
   return (
     <div>
-      <Switch>
+      <Routes>
         <Route path="/home">
           <Home />
         </Route>
@@ -32,9 +32,9 @@ const Routes = () => {
         <Route path="/chat">
           <Chat />
         </Route>
-      </Switch>
+      </Routes>
     </div>
   );
 };
 
-export default Routes;
+export default Router;
