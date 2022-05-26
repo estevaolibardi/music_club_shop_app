@@ -1,0 +1,64 @@
+import { useForm } from "react-hook-form";
+import TextInput from "../TextInput";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import {
+  DivContainer,
+  DivCreateText,
+  ForgetPassword,
+  MainContainer,
+} from "./style";
+
+const LoginForm = () => {
+  const schema = yup.object().shape({
+    email: yup
+      .string()
+      .required("Email obigatório.")
+      .email("Insira um email válido."),
+    password: yup.string().required("Senha obrigatória."),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const submitLogin = () => {
+    // provider de handle login
+  };
+
+  return (
+    <DivContainer>
+      <h1>Log-In</h1>
+
+      <MainContainer>
+        <form onSubmit={handleSubmit(submitLogin)}>
+          <TextInput
+            labelName={"Email"}
+            error={errors.email?.message}
+            borderColor={errors.email?.message ? "#e00000" : "#e07600"}
+            register={register}
+            name={"email"}
+          />
+          <TextInput
+            labelName={"Senha"}
+            error={errors.password?.message}
+            borderColor={errors.password?.message ? "#e00000" : "#e07600"}
+            register={register}
+            name={"password"}
+          />
+          <ForgetPassword>Esqueci minha senha</ForgetPassword>
+
+          <button type="submit">Login</button>
+        </form>
+      </MainContainer>
+      <DivCreateText>
+        <p>Não possui uma conta?</p>
+        <p>Cadastre-se aqui!</p>
+      </DivCreateText>
+    </DivContainer>
+  );
+};
+
+export default LoginForm;
