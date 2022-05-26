@@ -84,7 +84,7 @@ export const Butn = styled.button`
   }
 
   @media screen and (min-width: 1440px) {
-    top: 43%;
+    top: 40%;
   }
 `;
 

@@ -11,7 +11,7 @@ const Logo = () => {
           <GiHamburgerMenu size={25} />{" "}
         </Btn>
         <div>
-          <h2>music club shop</h2>
+          <Link to="/"> <h2>music club shop</h2></Link>
           <img src={Logomarca} alt="logo" />
         </div>
       </div>

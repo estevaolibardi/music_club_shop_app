@@ -9,7 +9,7 @@ export const NavContainer = styled.nav`
   color: white;
   z-index: 1;
   font-weight: 700;
-  padding-top: 10px;
+  padding-top: 40px;
   font-size: 12px;
   align-items: center;
   line-height: 22px;
