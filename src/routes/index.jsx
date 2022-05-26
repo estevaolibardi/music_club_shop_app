@@ -11,9 +11,7 @@ const Router = () => {
   return (
     <div>
       <Routes>
-        <Route path="/home">
-          <Home />
-        </Route>
+        <Route path="/" element={Home}></Route>
         <Route path="/login">
           <Login />
         </Route>
