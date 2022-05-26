@@ -55,6 +55,10 @@ export const Container = styled.div`
   @media only screen and (min-width: 1440px) {
     width: 24%;
 
+    a{
+      text-decoration: none;
+    }
+
     h2 {
       font-style: normal;
       font-weight: 400;
