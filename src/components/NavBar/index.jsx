@@ -18,7 +18,7 @@ const NavBar = () => {
           <FaMusic size={20} />
           <Link to="/cifras"> Cifras</Link>
           <FaGuitar size={25} />
-          <Link to="/aulas"> Aulas</Link>
+          <Link to="/user"> Perfil</Link>
           <FaRegNewspaper size={25} />
           <Link to="/noticias"> Notícias</Link>
         </div>
