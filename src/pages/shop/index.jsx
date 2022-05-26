@@ -6,6 +6,8 @@ const Shop = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const { products, setActualPage } = useProducts();
 
+  console.log(products);
+
   const handleNextPage = () => {
     setPageNumber(pageNumber + 1);
     setActualPage(`/products?page=${pageNumber + 1}&limit=15`);
