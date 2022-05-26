@@ -4,8 +4,9 @@ export const Container = styled.header`
   width: 100%;
   background-color: #212121;
   border-radius: ${({ open }) => open && "0 0 15px 15px"};
+  position: relative;
+  height: 11rem;
 
-  height: 120px;
 
   .cont2 {
     background-color: var(--color-primary-4);
@@ -35,6 +36,16 @@ export const Container = styled.header`
     }
   }
 
+  @media screen and (min-width: 740px) {
+    
+
+    
+  }
+
+
+
+
+
   @media screen and (min-width: 1024px) {
     display: flex;
     align-items: center;
@@ -47,7 +58,7 @@ export const Container = styled.header`
 
     section {
       display: flex;
-      width: 100%;
+      width: 90%;
       height: 60px;
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -57,12 +68,37 @@ export const Container = styled.header`
       align-items: center;
       flex-direction: row;
       justify-content: center;
+
+      div{
+        justify-content: flex-start;
+
+        button{
+          margin: 5px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    
+
+    section {
+     
+
+      div{
+       
+
+        div{
+          padding-bottom: 0px;
+        }
+      }
     }
   }
 `;
 
 export const Input = styled.input`
   height: 28px;
+  margin-right: 5px;
   border-style: none;
   border-radius: 20px;
   text-decoration: none;
@@ -73,7 +109,7 @@ export const Input = styled.input`
 
 export const Butn = styled.button`
   position: absolute;
-  right: 32%;
+  right: 39%;
   border: none;
   background-color: transparent;
   color: #e67600;
@@ -83,8 +119,25 @@ export const Butn = styled.button`
     height: 22px;
   }
 
-  @media screen and (min-width: 750px) {
-    top: 40%;
+  @media screen and (min-width: 740px) {
+    top: 45%;
+    left: 67%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 37%;
+    left: 80%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 37%;
+    left: 66%;
+  }
+
+  @media screen and (min-width: 1800px) {
+    top: 37%;
+    left: 67.5%;
+
   }
 `;
 
@@ -99,10 +152,15 @@ export const BtnCart = styled.button`
 `;
 
 export const RightPart = styled.div`
-  width: 90%;
+  width: 80%;
+
+  @media screen and (min-width: 740px) {
+    width: 70%;
+  }
 
   @media screen and (min-width: 750px) {
     width: 45%;
-    margin-right: 300px;
+    margin-right: 200px;
+    margin-left: 90px;
   }
 `;
