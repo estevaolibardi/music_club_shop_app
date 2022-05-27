@@ -16,7 +16,6 @@ import { UseLoginProvider } from "../../provider/login";
 const ChatPage = () => {
   const { user } = UseLoginProvider();
   const userData = JSON.parse(user);
-  console.log(userData);
 
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
@@ -62,7 +61,7 @@ const ChatPage = () => {
       <Header />
 
       <Container>
-        <h1>Music Club Chat</h1>
+        <h1>Music Club Chat - Vamos trocar uma ideia sobre música!</h1>
 
         <ContainerChat>
           {chat.map((data, index) => (
@@ -88,6 +87,7 @@ const ChatPage = () => {
 
           <Button
             id="botao"
+            title="Envie sua mensagem"
             onClick={() =>
               sendMessage({
                 idRoom: idDestiny,
