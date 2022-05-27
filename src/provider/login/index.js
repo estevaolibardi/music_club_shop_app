@@ -33,6 +33,10 @@ export const LoginProvider = ({ children }) => {
       })
       .then((res) => {
         localStorage.setItem("@music-club: user", JSON.stringify(res.data));
+        localStorage.setItem(
+          "@music-club: cart",
+          JSON.stringify(res.data.cart.products)
+        );
         setUser(res.data);
         toast.success(`Bem vindo(a) ${res.data.name}! :D`);
       })

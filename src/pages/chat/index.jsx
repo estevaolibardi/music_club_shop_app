@@ -16,7 +16,6 @@ import { UseLoginProvider } from "../../provider/login";
 const ChatPage = () => {
   const { user } = UseLoginProvider();
   const userData = JSON.parse(user);
-  console.log(userData);
 
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);

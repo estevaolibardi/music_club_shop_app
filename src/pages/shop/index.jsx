@@ -8,12 +8,15 @@ import {
   ContainerDescription,
 } from "./styles";
 import Header from "../../components/Header";
+import { useCart } from "../../provider/cart";
 
 const Shop = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const { products, setActualPage } = useProducts();
 
   console.log(products);
+
+  const { addToCart } = useCart();
 
   const handleNextPage = () => {
     setPageNumber(pageNumber + 1);
@@ -41,6 +44,9 @@ const Shop = () => {
                 <ContainerDescription>
                   <p>{element.description}</p>
                 </ContainerDescription>
+                <button onClick={() => addToCart(element.id)}>
+                  Adicionar ao carrinho
+                </button>
               </li>
             ))
           ) : (
