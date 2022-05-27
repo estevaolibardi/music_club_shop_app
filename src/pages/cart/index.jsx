@@ -28,7 +28,7 @@ const Cart = () => {
     <div>
       <Header />
 
-      {cart.length > 0 ? (
+      {/* {cart.length > 0 ? (
         cart.map((product, index) => (
           <div key={index}>
             <img src={product.product.img_url} alt={product.product.name} />
@@ -40,7 +40,7 @@ const Cart = () => {
         ))
       ) : (
         <h1>Sem produtos</h1>
-      )}
+      )} */}
 
       <h1>Adicione produtos ao carrinho para vê-los aqui</h1>
     </div>
