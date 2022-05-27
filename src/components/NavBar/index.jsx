@@ -20,7 +20,7 @@ const NavBar = () => {
           <FaGuitar size={25} />
           <Link to="/user"> Perfil</Link>
           <FaRegNewspaper size={25} />
-          <Link to="/noticias"> Notícias</Link>
+          <Link to="/news"> Notícias</Link>
         </div>
       </ContainerDownLink>
     </NavContainer>

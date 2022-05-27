@@ -8,7 +8,7 @@ export const Container = styled.div`
   h2 {
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 21px;
     text-transform: uppercase;
     display: flex;
@@ -42,18 +42,10 @@ export const Container = styled.div`
     }
   }
 
-  @media only screen and (min-width: 1024px) {
-    h2 {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.4rem;
-      line-height: 21px;
-      color: white;
-    }
-  }
-
-  @media only screen and (min-width: 1440px) {
-    width: 24%;
+  @media only screen and (min-width: 700px) {
+    width: 40%;
+    text-decoration: none;
+    margin-bottom: 10px;
 
     a{
       text-decoration: none;
@@ -62,7 +54,45 @@ export const Container = styled.div`
     h2 {
       font-style: normal;
       font-weight: 400;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      line-height: 21px;
+      color: white;
+      
+    }
+  }
+
+
+  @media only screen and (min-width: 1024px) {
+    width: 40%;
+    text-decoration: none;
+
+    a{
+      text-decoration: none;
+    }
+
+    h2 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 21px;
+      color: white;
+      
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 24%;
+    margin-bottom: 0px;
+
+    a{
+      text-decoration: none;
+    }
+
+    h2 {
+      font-style: normal;
+      margin-top: 5px;
+      font-weight: 400;
+      font-size: 1.6rem;
       line-height: 21px;
       height: 40px;
       color: white;
@@ -80,6 +110,10 @@ export const Btn = styled.button`
   color: white;
   border-style: none;
   display: flex;
+
+  @media only screen and (min-width: 700px) {
+    display: none;
+  }
 
   @media only screen and (min-width: 1024px) {
     display: none;
