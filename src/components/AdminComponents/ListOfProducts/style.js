@@ -23,7 +23,6 @@ export const ListProductsContainer = styled.div`
     overflow: hidden;
     white-space: nowrap;
     padding: 0 20px;
-    margin: 10px 0;
   }
   .line {
     padding: 14px 0;
