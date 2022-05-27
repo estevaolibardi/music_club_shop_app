@@ -6,9 +6,7 @@ import { UseLoginProvider } from "../login";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(
-    localStorage.getItem("@music-club: cart") || []
-  );
+  const [cart, setCart] = useState([]);
 
   const [user] = useState(
     JSON.parse(localStorage.getItem("@music-club: user") || false)
@@ -27,7 +25,7 @@ export const CartProvider = ({ children }) => {
           Authorization: `Bearer ${userToken}`,
         },
       })
-      .then((res) => console.log(res.data))
+      .then((res) => setCart([...res.data.products]))
       .catch((err) => console.log(err.message));
   };
 
