@@ -22,8 +22,9 @@ export const InfoAdminProvider = ({ children }) => {
   );
 
   const getUser = async () => {
+    
     await musicClubShopApi
-      .get("/users", { headers: { authorization: `Bearer ${adminToken}` } })
+      .get("/users", { headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}` } })
       .then((res) => {
         setUsers(res.data);
         localStorage.setItem("@UsersAdmin", JSON.stringify(res.data));
@@ -32,7 +33,7 @@ export const InfoAdminProvider = ({ children }) => {
 
   const getOrder = async () => {
     await musicClubShopApi
-      .get("/orders", { headers: { authorization: `Bearer ${adminToken}` } })
+      .get("/orders", { headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}` } })
       .then((res) => {
         setOrders(res.data);
         localStorage.setItem("@OrdersAdmin", JSON.stringify(res.data));
@@ -41,7 +42,7 @@ export const InfoAdminProvider = ({ children }) => {
 
   const getProduct = async () => {
     await musicClubShopApi
-      .get("/products", { headers: { authorization: `Bearer ${adminToken}` } })
+      .get("/products", { headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}` } })
       .then((res) => {
         setProducts(res.data);
         localStorage.setItem("@ProductsAdmin", JSON.stringify(res.data));
@@ -53,7 +54,7 @@ export const InfoAdminProvider = ({ children }) => {
       .patch(
         `/orders/${id}`,
         { status: newStatus },
-        { headers: { authorization: `Bearer ${adminToken}` } }
+        { headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}` } }
       )
       .then(async (res) => {
         await getOrder();
@@ -68,7 +69,7 @@ export const InfoAdminProvider = ({ children }) => {
         `products/${id}`,
         { mode: "no-cors",
         },
-    { headers: { authorization: `Bearer ${adminToken}` } },
+    { headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}` } },
       )
       .then(async (res) => {
         await getProduct();
@@ -78,14 +79,14 @@ export const InfoAdminProvider = ({ children }) => {
   };
 
   const createProduct = async(data)=>{
-    await musicClubShopApi.post('/products',data,{ headers: { authorization: `Bearer ${adminToken}`}}).then(async(res)=>{
+    await musicClubShopApi.post('/products',data,{ headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}`}}).then(async(res)=>{
         await getProduct()
         toast.success("Produto criado")
     }).catch((err) => toast.error("Erro ao criar produto"))
   }
 
   const updateProduct = async(data,id)=>{
-    await musicClubShopApi.patch(`/products/${id}`,data,{ headers: { authorization: `Bearer ${adminToken}`}}).then(async(res)=>{
+    await musicClubShopApi.patch(`/products/${id}`,data,{ headers: { authorization: `Bearer ${adminToken ? adminToken : localStorage.getItem("@AdminToken")}`}}).then(async(res)=>{
         await getProduct()
         toast.success("Produto atualizado")
     }).catch((err) => toast.error("Erro ao atualizar produto"))
