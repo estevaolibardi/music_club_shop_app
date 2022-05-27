@@ -1,11 +1,12 @@
 import { AdminLoginPageContainer } from "./style"
 import {FaLock} from 'react-icons/fa'
 import AdminLoginInput from "../../components/AdminLoginInput"
-
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
-import { useLoginAdmin } from "../../provider/login"
+import { useLoginAdmin } from "../../provider/login-admin"
+
+import {useNavigate,Navigate} from 'react-router-dom'
 
 const LoginAdminPage = ()=>{
     const schema = yup.object().shape({
@@ -16,12 +17,14 @@ const LoginAdminPage = ()=>{
         resolver:yupResolver(schema)
     })
 
-    const {login} = useLoginAdmin()
+    const {login,adminToken} = useLoginAdmin()
     const loginSub = async (data)=>{
         login(data)
     }
-
-    
+    const navigate = useNavigate()
+    if(adminToken){
+        return <Navigate to={'/admin'} />
+    }
     return(
         <AdminLoginPageContainer>
             <form onSubmit={handleSubmit(loginSub)}>
@@ -34,7 +37,7 @@ const LoginAdminPage = ()=>{
                 <button type="submit" >Login</button>
                 <button onClick={(e)=>{
                     e.preventDefault()
-                    
+                    navigate('/')
                 }} className="go-back">Voltar para loja</button>
             </form>
         </AdminLoginPageContainer>

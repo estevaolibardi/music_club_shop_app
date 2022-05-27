@@ -51,19 +51,20 @@ export const ListCustomersContainer = styled.div`
   }
 
   .name {
-    width: 30%;
+    width: 20%;
   }
-  .price {
-    width: 10%;
+  .email {
+    width: 20%;
   }
-  .status {
+  .user_name {
     width: 25%;
   }
-  .typeOfPayment {
-    width: 25%;
+  .tel {
+    width: 20%;
   }
-  .edit {
-    width: 10%;
+  .birth_date {
+    width: 15%;
+    text-align: center;
     cursor: pointer;
     svg {
       font-size: 20px;

@@ -23,6 +23,7 @@ export const ListProductsContainer = styled.div`
     overflow: hidden;
     white-space: nowrap;
     padding: 0 20px;
+    margin: 10px 0;
   }
   .line {
     padding: 14px 0;
@@ -70,8 +71,10 @@ export const ListProductsContainer = styled.div`
   }
   .qtd_in_stock {
     width: 20%;
+    text-align: center;
   }
   .exclude{
+    text-align: center;
       width: 10%;
       svg {
         cursor: pointer;
@@ -80,6 +83,7 @@ export const ListProductsContainer = styled.div`
     }
   }
   .details {
+    text-align: center;
     width: 20%;
     svg {
         cursor: pointer;
@@ -89,10 +93,54 @@ export const ListProductsContainer = styled.div`
   }
   .edit {
     width: 10%;
+    text-align: center;
     cursor: pointer;
     svg {
       font-size: 20px;
       color: var(--color-admin-primary);
+    }
+  }
+  .modal-confirmation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal-confirmation-window{
+      max-width: 320px;
+      width: 90%;
+      padding: 15px 0;
+      position: relative;
+      background-color: white;
+      min-height: 50px;
+      >h2{
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .close{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        svg{
+          font-size: 25px;
+          cursor: pointer;
+        }
+      }
+      button{
+        border: 0;
+        outline: 0;
+        padding: 10px;
+        
+      }
+    }
+    .button-modal{
+      display: flex;
+      justify-content: space-around;
     }
   }
 `;

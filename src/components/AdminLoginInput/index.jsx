@@ -2,7 +2,7 @@ import { AdminInpuContainer } from "./style"
 import {AiFillEye,AiFillEyeInvisible} from 'react-icons/ai'
 import { useState } from "react"
 
-const AdminLoginInput = ({placeholder,legend,isPassword=false,name,register,errors})=>{
+const AdminLoginInput = ({placeholder,type='text',legend,isPassword=false,name,register,errors})=>{
     const [ visible,setVisible ] = useState(false)
     return(
     <AdminInpuContainer>
@@ -21,7 +21,7 @@ const AdminLoginInput = ({placeholder,legend,isPassword=false,name,register,erro
         ): (
             <>
             <legend>{legend}</legend>
-            <input name={name} {...register(name)} type={'text'} placeholder={placeholder} />
+            <input name={name} {...register(name)} type={type} placeholder={placeholder} />
             
             </>
         )}

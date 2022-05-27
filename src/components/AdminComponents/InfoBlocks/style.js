@@ -28,7 +28,10 @@ export const InfoBlockContainer = styled.div`
       width: 100%;
     }
     p {
-      font-size: 45px;
+      font-size: 41px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
     span {
       font-size: 15px;

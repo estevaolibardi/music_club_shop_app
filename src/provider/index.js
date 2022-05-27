@@ -1,3 +1,4 @@
+import { InfoAdminProvider } from "./info-admin";
 import { LoginProvider } from "./login";
 import { LoginAdminProvider } from "./login-admin";
 import { ProductsProvider } from "./products";
@@ -8,7 +9,9 @@ const Provider = ({ children }) => {
     <ProductsProvider>
       <RegisterProvider>
         <LoginAdminProvider>
-          <LoginProvider>{children}</LoginProvider>
+          <InfoAdminProvider>
+            <LoginProvider>{children}</LoginProvider>
+          </InfoAdminProvider>
         </LoginAdminProvider>
       </RegisterProvider>
     </ProductsProvider>

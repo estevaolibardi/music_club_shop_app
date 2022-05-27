@@ -1,8 +1,19 @@
+import { useState } from "react"
 import { FaEye } from "react-icons/fa"
+import { useInfoAdmin } from "../../../provider/info-admin"
+import ShowOrderModal from "../showOrderModal"
 import { ListOrdersContainer } from "./style"
 
 const ListOrders = ()=>{
-
+    const {
+        users,
+        orders,
+        products,
+        updateOrderStatus
+      } = useInfoAdmin()
+    const [openedModal,setOpenedModal] = useState(false)
+    const [order,setOrder] = useState({})
+    const closeModal = ()=>setOpenedModal(false)
     return(
         <ListOrdersContainer>
             <div className="section-title">
@@ -13,76 +24,45 @@ const ListOrders = ()=>{
                <div className="table-header line">
                    <p className="name">Nome</p>
                    <p className="price">Total</p>
-                   <p className="status">Status</p>
                    <p className="typeOfPayment">Tipo de Pagamento</p>
+                   <p className="status">Status</p>
                    <p className="edit">Ver Detalhes</p>
+                   <p className="change-status">Alterar Status</p>
                </div>
-            <div className="table">
+            <ul className="table">
 
 
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
+                {orders.map(order=>(
+                <div className="table-line line" key={order.id}>
+                   <p className="name">{order.user.name}</p>
+                   <p className="price">R$ {order.buys.total.toFixed(2)}</p>
+                   <p className="typeOfPayment">{order.typeOfPayment}</p>
+                   <p className="status">{order.status}</p>
+                   <p className="edit" onClick={()=>{
+                       setOpenedModal(true)
+                       setOrder(order)
+                   }}> <FaEye/> </p>
+                   <p className="change-status">
+                       <select name="" id="" onChange={ async(e)=>{
+                           await updateOrderStatus(e.target.value,order.id)
+                           
+                           }}>
+                           <option value="Enviado">Enviado</option>
+                           <option value="Cancelado">Cancelado</option>
+                           <option value="Entregue">Entregue</option>
+                           <option value="Pendente">Pendente</option>
+                           <option value="Concluído">Concluído</option>
+                           <option value="Concluído">Pago</option>
+                       </select>
+                   </p>
 
-
+                </div>
+                ))}
                 
-
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-               <div className="table-line line">
-                   <p className="name">Gabriel</p>
-                   <p className="price">R$ 12.50</p>
-                   <p className="status">Processando</p>
-                   <p className="typeOfPayment">Boleto</p>
-                   <p className="edit"> <FaEye/> </p>
-               </div>
-
-            </div>
-
+              
+            </ul>
+            {openedModal && <ShowOrderModal closeModal={closeModal} order={order}/>}
+            
 
         </ListOrdersContainer>
     )
