@@ -85,7 +85,7 @@ export const InfoAdminProvider = ({ children }) => {
   }
 
   const updateProduct = async(data,id)=>{
-    await musicClubShopApi.post(`/products/${id}`,data,{ headers: { authorization: `Bearer ${adminToken}`}}).then(async(res)=>{
+    await musicClubShopApi.patch(`/products/${id}`,data,{ headers: { authorization: `Bearer ${adminToken}`}}).then(async(res)=>{
         await getProduct()
         toast.success("Produto atualizado")
     }).catch((err) => toast.error("Erro ao atualizar produto"))
