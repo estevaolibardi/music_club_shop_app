@@ -33,14 +33,16 @@ const AdminPage = () => {
 
 
   useEffect(()=>{
-    (async()=>{ 
-      if(users.length===0) await getUser()
-      if(orders.length===0) await getOrder()
-      if(products.length===0) await getProduct()
-  })()
-
+    loadInfo()
   },[])
 
+  const loadInfo = async()=>{
+    if(users.length===0) await getUser()
+    if(orders.length===0) await getOrder()
+    if(products.length===0) await getProduct()
+  }
+
+  loadInfo()
 
     if (!adminToken) {
       return <Navigate to={"/admin-login"}/>;
