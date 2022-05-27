@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListProductsContainer = styled.div`
-  background-color: white;
+  background-color: var(--color-admin-background-secondary);
   border-radius: 20px;
   padding: 30px 0;
   margin: 0 20px;
@@ -18,7 +18,7 @@ export const ListProductsContainer = styled.div`
   }
   p {
     display: inline-block;
-    color: #999;
+    color: var(--color-admin-text-secondary);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -26,7 +26,7 @@ export const ListProductsContainer = styled.div`
   }
   .line {
     padding: 14px 0;
-    border-bottom: 2px solid #e2e2e2;
+    border-bottom: 2px solid var(--color-admin-background-primary);
   }
   .section-title {
     display: flex;
@@ -38,7 +38,7 @@ export const ListProductsContainer = styled.div`
       outline: 0;
       background-color: var(--color-admin-primary);
       padding: 10px;
-      color: white;
+      color: var(--color-admin-text-white);
       font-size: 12px;
       font-weight: 900;
       border-radius: 20px;
@@ -46,7 +46,7 @@ export const ListProductsContainer = styled.div`
   }
   .table-header {
     p {
-      color: #000;
+      color: var(--color-admin-text-primary);
     }
   }
 
@@ -56,7 +56,7 @@ export const ListProductsContainer = styled.div`
       background-color: var(--color-admin-primary);
       transition: 400ms all;
       p,svg{
-        color:white
+        color:var(--color-admin-text-white)
       }
     }
   }
@@ -70,8 +70,10 @@ export const ListProductsContainer = styled.div`
   }
   .qtd_in_stock {
     width: 20%;
+    text-align: center;
   }
   .exclude{
+    text-align: center;
       width: 10%;
       svg {
         cursor: pointer;
@@ -80,6 +82,7 @@ export const ListProductsContainer = styled.div`
     }
   }
   .details {
+    text-align: center;
     width: 20%;
     svg {
         cursor: pointer;
@@ -89,10 +92,54 @@ export const ListProductsContainer = styled.div`
   }
   .edit {
     width: 10%;
+    text-align: center;
     cursor: pointer;
     svg {
       font-size: 20px;
       color: var(--color-admin-primary);
+    }
+  }
+  .modal-confirmation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal-confirmation-window{
+      max-width: 320px;
+      width: 90%;
+      padding: 15px 0;
+      position: relative;
+      background-color: white;
+      min-height: 50px;
+      >h2{
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .close{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        svg{
+          font-size: 25px;
+          cursor: pointer;
+        }
+      }
+      button{
+        border: 0;
+        outline: 0;
+        padding: 10px;
+        
+      }
+    }
+    .button-modal{
+      display: flex;
+      justify-content: space-around;
     }
   }
 `;

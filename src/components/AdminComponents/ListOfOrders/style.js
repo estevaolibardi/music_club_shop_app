@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListOrdersContainer = styled.div`
-  background-color: white;
+  background-color: var(--color-admin-background-secondary);
   border-radius: 20px;
   padding: 30px 0;
   margin: 0 20px;
@@ -18,7 +18,7 @@ export const ListOrdersContainer = styled.div`
   }
   p {
     display: inline-block;
-    color: #999;
+    color: var(--color-admin-text-secondary);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -26,7 +26,7 @@ export const ListOrdersContainer = styled.div`
   }
   .line {
     padding: 14px 0;
-    border-bottom: 2px solid #e2e2e2;
+    border-bottom: 2px solid var(--color-admin-background-primary);
   }
   .section-title {
     display: flex;
@@ -42,30 +42,39 @@ export const ListOrdersContainer = styled.div`
     :hover{
       background-color: var(--color-admin-primary);
       transition: 400ms all;
-      p,svg{
-        color:white
+      p,svg,select{
+        color:var(--color-admin-text-white)
       }
     }
   }
 
   .name {
-    width: 25%;
+    width: 22%;
   }
   .price {
-    width: 10%;
+    width: 13%;
   }
   .status {
-    width: 20%;
+    width: 10%;
   }
   .typeOfPayment {
-    width: 25%;
+    width: 20%;
   }
   .edit {
-    width: 20%;
+    width: 15%;
     cursor: pointer;
+    text-align: center;
     svg {
       font-size: 20px;
       color: var(--color-admin-primary);
     }
+  }
+  .change-status{
+    width: 20%;
+  }
+  select{
+    outline: 0;
+    border: 0;
+    background-color: transparent;
   }
 `;
