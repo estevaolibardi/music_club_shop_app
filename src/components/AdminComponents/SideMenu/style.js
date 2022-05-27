@@ -12,7 +12,7 @@ export const SideMenuContainer = styled.div`
   top: 0;
   svg {
     font-size: 26px;
-    color: white;
+    color: var(--color-admin-text-white);
   }
   ul {
     transition: 400ms all;
@@ -25,7 +25,7 @@ export const SideMenuContainer = styled.div`
       border-radius: 30px 0 0 30px;
       cursor: pointer;
       :hover {
-        background-color: white;
+        background-color: var(--color-admin-background-secondary);
         p,
         svg {
           color: var(--color-admin-primary);
@@ -35,7 +35,7 @@ export const SideMenuContainer = styled.div`
         transition: 300ms all;
         padding: 0px 0 0 20px;
         font-size: 14px;
-        color: white;
+        color: var(--color-admin-text-white);
         font-weight: 500;
         width: 230px;
         text-overflow: ellipsis;
@@ -61,8 +61,10 @@ export const SideMenuContainer = styled.div`
     padding: 15px;
     cursor: pointer;
     svg {
+      transition: 400ms all;
       font-size: 32px;
-      color: white;
+      color: var(--color-admin-text-white);
+      transform: ${(prop) => (prop.openSideMenu ? "rotateZ(0deg)" : "rotateZ(180deg)")} ;
     }
   }
   display: flex;
