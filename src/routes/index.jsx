@@ -10,6 +10,7 @@ import Chat from "../pages/chat";
 import AdminPage from "../pages/admin";
 import LoginAdminPage from "../pages/admin-login";
 import Header from "../components/Header";
+import News from "../pages/news";
 
 const Router = () => {
   return (
@@ -24,6 +25,7 @@ const Router = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/admin-login" element={<LoginAdminPage />} />
+        <Route path="/news" element={<News />} />
       </Routes>
     </div>
   );

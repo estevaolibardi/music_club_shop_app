@@ -28,6 +28,8 @@ export const Content = styled.div`
     }
   }
 
+  
+
   @media only screen and (min-width: 1024px) {
     .containerMobile {
       span {
@@ -132,6 +134,7 @@ export const BannerInfo = styled.div`
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 
     div {
       span {
@@ -154,4 +157,39 @@ export const BannerInfo = styled.div`
       margin: 10px;
     }
   }
+
+  @media only screen and (min-width: 600px) {
+    div{
+      flex-wrap: wrap;
+        div{
+          width: 50%;
+          
+        }
+    } 
+  }
+
+  @media only screen and (min-width: 1024px) {
+    div{
+      justify-content: space-around;
+      
+        div{
+          width: 20%;
+          
+        }
+    } 
+  }
+`;
+
+export const Spotlight = styled.div`
+  
+    li{
+
+      img{
+        width: 200px;
+      height: 400px;
+      }
+     
+    }
+  
+
 `;
