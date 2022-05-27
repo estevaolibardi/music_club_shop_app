@@ -28,7 +28,11 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 14px;
     }
     :root{
-        --color-admin-primary:#FF5E19
-
+        --color-admin-primary:#FF5E19;
+        --color-admin-background-primary:#e2e2e2;
+        --color-admin-background-secondary:#fff;
+        --color-admin-text-primary:#000;
+        --color-admin-text-secondary:#555;
+        --color-admin-text-white:#fff
     }
 `;

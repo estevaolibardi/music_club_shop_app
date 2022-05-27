@@ -23,7 +23,9 @@ const Router = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="/news" element={<News></News>} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin-login" element={<LoginAdminPage />} />
+        <Route path="/news" element={<News />} />
       </Routes>
     </div>
   );

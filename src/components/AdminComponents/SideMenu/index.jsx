@@ -3,8 +3,13 @@ import { FiMusic } from "react-icons/fi";
 import { FaGuitar, FaUserFriends } from "react-icons/fa";
 import { BiLogOut, BiCog, BiArrowToLeft } from "react-icons/bi";
 import { AiFillLock, AiOutlineDollar } from "react-icons/ai";
+import { useLoginAdmin } from "../../../provider/login-admin/";
+
 
 const SideMenu = ({ openSideMenu, openClose, changeOption }) => {
+  const {logout} = useLoginAdmin()
+  
+
   return (
     <SideMenuContainer openSideMenu={openSideMenu}>
       <ul className={openSideMenu ? "" : "closed"}>
@@ -53,7 +58,9 @@ const SideMenu = ({ openSideMenu, openClose, changeOption }) => {
           </p>
         </li>
 
-        <li>
+        <li onClick={()=>{
+          logout()
+        }}>
           <BiLogOut />
           <p>
             <span>Log Out</span>
