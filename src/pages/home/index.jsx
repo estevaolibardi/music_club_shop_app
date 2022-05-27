@@ -72,17 +72,7 @@ const Home = () => {
       </Spotlight>
 
       <Footer>
-        <div>
-          <div></div>
-          <div>
-            <ul>
-              <li>teste</li>
-              <li>teste</li>
-              <li>teste</li>
-              <li>teste</li>
-            </ul>
-          </div>
-        </div>
+        <div></div>
       </Footer>
     </Container>
   );
